@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart'; // Importa el paquete
+import 'register_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -74,6 +76,7 @@ class LoginPage extends StatelessWidget {
                               decoration: InputDecoration(
                                 border: InputBorder.none,
                                 hintText: "Email",
+                                  contentPadding: EdgeInsets.symmetric(vertical: 15),
                                 prefixIcon: Icon(Icons.email),
                                   prefixIconColor: MaterialStateColor.resolveWith((states) =>
                                   states.contains(MaterialState.focused)
@@ -98,6 +101,7 @@ class LoginPage extends StatelessWidget {
                               decoration: InputDecoration(
                                 border: InputBorder.none,
                                 hintText: "Contraseña",
+                                  contentPadding: EdgeInsets.symmetric(vertical: 15),
                                 prefixIcon: Icon(Icons.lock), // Icono para el campo de Contraseña
                                   prefixIconColor: MaterialStateColor.resolveWith((states) =>
                                   states.contains(MaterialState.focused)
@@ -129,16 +133,21 @@ class LoginPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "¿Estas Registrado?",
+                            "¿Estás Registrado?",
                             style: TextStyle(
                               color: Colors.black,
                             ),
                           ),
-                          Text(
-                            "  Registrate ahora",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xffff4f4f),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(context,MaterialPageRoute(builder: (context)=>RegisterPage()));
+                            },
+                            child: Text(
+                              "  Registrate ahora",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xffff4f4f),
+                              ),
                             ),
                           ),
                         ],
