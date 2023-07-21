@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'pages/login_page.dart';
 import 'pages/register_page.dart';
+import 'pages/adopter/adopter_menu.dart';
+import 'pages/shelter/shelter_menu.dart';
 
 void main() {
   runApp(const MyApp());
