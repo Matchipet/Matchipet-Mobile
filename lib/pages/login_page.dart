@@ -12,10 +12,10 @@ class LoginPage extends StatelessWidget {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color(0xFFe76a68),
-              Color(0xFFeb726f),
-              Color(0xFFe5555f),
-              Color(0xFFd83951),
+              Color(0xfff54e4b),
+              Color(0xffef4d49),
+              Color(0xffe3545e),
+              Color(0xffe3213f),
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,

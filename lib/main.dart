@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: RegisterOptionsBackground(),
       theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
+        primarySwatch: Colors.red,
         fontFamily: 'Montserrat',
         primaryColor: Color(0xffd24c4b), // Color principal de tu aplicación
         textSelectionTheme: TextSelectionThemeData(
