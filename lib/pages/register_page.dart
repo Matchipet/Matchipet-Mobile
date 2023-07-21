@@ -612,7 +612,9 @@ class _RegisterPageStepState extends State<RegisterPageStep> {
                           elevation: 0, // Establecer la elevación a 0 para quitar la sombra
 
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,MaterialPageRoute(builder: (context)=>LoginPage()));
+                        },
                         child: Text(
                           "Registrarse",
                           style: TextStyle(
@@ -1040,7 +1042,9 @@ class _RegisterPageShelterStepState extends State<RegisterPageShelterStep> {
                           elevation: 0, // Establecer la elevación a 0 para quitar la sombra
 
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context,MaterialPageRoute(builder: (context)=>LoginPage()));
+                        },
                         child: Text(
                           "Registrarse",
                           style: TextStyle(
