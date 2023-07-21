@@ -118,6 +118,7 @@ class LoginPage extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
+                          elevation: 0, // Establecer la elevación a 0 para quitar la sombra
                         ),
                         onPressed: () {},
                         child: Text(
@@ -127,6 +128,7 @@ class LoginPage extends StatelessWidget {
                           ),
                         ),
                       ),
+
                       SizedBox(height: 15), // Espacio entre los campos de texto y el botón
                       //REGISTRARSE
                       Row(
@@ -140,7 +142,7 @@ class LoginPage extends StatelessWidget {
                           ),
                           GestureDetector(
                             onTap: () {
-                              Navigator.push(context,MaterialPageRoute(builder: (context)=>RegisterPage()));
+                              Navigator.push(context,MaterialPageRoute(builder: (context)=>RegisterOptionsBackground()));
                             },
                             child: Text(
                               "  Registrate ahora",

@@ -10,6 +10,7 @@ class RegisterOptionsBackground extends StatefulWidget {
 }
 
 class _RegisterOptionsBackgroundState extends State<RegisterOptionsBackground> {
+  String selectedUserType = "none";
   Color adoptanteButtonColor = Colors.white;
   Color adoptanteIconColor = Color(0xffe3213f);
   Color albergueButtonColor = Colors.white;
@@ -17,6 +18,7 @@ class _RegisterOptionsBackgroundState extends State<RegisterOptionsBackground> {
 
   void _selectAdoptante() {
     setState(() {
+      selectedUserType = "adoptante";
       adoptanteButtonColor = Color(0xffe3213f);
       adoptanteIconColor = Colors.white;
       albergueButtonColor = Colors.white;
@@ -26,11 +28,21 @@ class _RegisterOptionsBackgroundState extends State<RegisterOptionsBackground> {
 
   void _selectAlbergue() {
     setState(() {
+      selectedUserType = "albergue";
       adoptanteButtonColor = Colors.white;
       adoptanteIconColor = Color(0xffe3213f);
       albergueButtonColor = Color(0xffe3213f);
       albergueIconColor = Colors.white;
     });
+  }
+
+  void _continueRegistration() {
+    if (selectedUserType == "adoptante") {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage()));
+    }
+    if (selectedUserType == "albergue") {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPageShelter()));
+    }
   }
 
   @override
@@ -136,6 +148,31 @@ class _RegisterOptionsBackgroundState extends State<RegisterOptionsBackground> {
                     ),
                   ],
                 ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0,30,0,0),
+                  child: SizedBox(
+                    width: 150, // Ajusta el ancho del botón según tus necesidades
+                    height: 40, // Ajusta el alto del botón según tus necesidades
+                    child: TextButton(
+                      style: TextButton.styleFrom(
+                        backgroundColor: Color(0xffe3213f),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      onPressed: _continueRegistration,
+                      child: Text(
+                        "Continuar",
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+
               ],
             ),
           ),
@@ -300,6 +337,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
+                          elevation: 0, // Establecer la elevación a 0 para quitar la sombra
                         ),
                         onPressed: () {
                           Navigator.push(context,MaterialPageRoute(builder: (context)=>RegisterPageStep()));
@@ -571,6 +609,8 @@ class _RegisterPageStepState extends State<RegisterPageStep> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
+                          elevation: 0, // Establecer la elevación a 0 para quitar la sombra
+
                         ),
                         onPressed: () {},
                         child: Text(
@@ -783,6 +823,8 @@ class _RegisterPageShelterState extends State<RegisterPageShelter> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
+                          elevation: 0, // Establecer la elevación a 0 para quitar la sombra
+
                         ),
                         onPressed: () {
                           Navigator.push(context,MaterialPageRoute(builder: (context)=>RegisterPageShelterStep()));
@@ -995,6 +1037,8 @@ class _RegisterPageShelterStepState extends State<RegisterPageShelterStep> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
+                          elevation: 0, // Establecer la elevación a 0 para quitar la sombra
+
                         ),
                         onPressed: () {},
                         child: Text(
