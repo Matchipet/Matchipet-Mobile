@@ -39,6 +39,26 @@ class _AdopterMenuState extends State<AdopterMenu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Matchipet",
+          style: TextStyle(
+            color: Colors.black, // Color de texto negro
+          ),
+        ),
+        backgroundColor: Colors.white,
+        elevation: 0,
+        automaticallyImplyLeading: false,// Quita la sombra del AppBar
+        actions: [
+          IconButton(
+            icon: Icon(Icons.logout,color: Colors.black,),
+            onPressed: () {
+              // Aquí puedes agregar el código para la funcionalidad de logout
+              // Por ejemplo, cerrar sesión y navegar a la pantalla de inicio de sesión
+            },
+          ),
+        ],
+      ),
       body: IndexedStack(
         index: currentIndex,
         children: _pages,

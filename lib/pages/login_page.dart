@@ -10,8 +10,12 @@ class LoginPage extends StatelessWidget {
 
 
   void _login(BuildContext context, String email, String password) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => AdopterMenu()),
+    );
 
-    if (email.isEmpty || password.isEmpty) {
+    /*if (email.isEmpty || password.isEmpty) {
       // Si alguno de los campos está vacío, no se redirige
       print('Campos vacios');
       return;
@@ -33,7 +37,7 @@ class LoginPage extends StatelessWidget {
       // Opcionalmente, puedes mostrar un mensaje de error para emails inválidos
       // O realizar otra acción en caso de no ser un email conocido
       print('Email inválido');
-    }
+    }*/
   }
 
   @override
