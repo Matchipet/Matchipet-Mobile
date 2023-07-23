@@ -26,7 +26,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   shape: BoxShape.circle,
                   image: DecorationImage(
                     image: NetworkImage(
-                      'https://static.wikia.nocookie.net/starwars/images/2/26/Cody_brief.png/revision/latest/thumbnail/width/360/height/360?cb=20160123025350',
+                      'https://filmatronik.com/wp-content/uploads/2021/02/7bb1bc45639c478ef4b2b0b114a3e315.jpg',
                     ),
                     fit: BoxFit.cover,
                   ),
@@ -34,7 +34,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               SizedBox(height: 10),
               Text(
-                'Diego Talledo',
+                'Hayden Christensen',
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 10),

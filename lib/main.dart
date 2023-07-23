@@ -3,8 +3,8 @@ import 'pages/login_page.dart';
 import 'pages/register_page.dart';
 import 'pages/adopter/adopter_menu.dart';
 import 'pages/shelter/shelter_menu.dart';
-import 'pages/adopter/card/example_card.dart';
-import 'pages/model/example_candidate_model.dart';
+import 'pages/adopter/card/match_card.dart';
+import 'pages/model/candidate_model.dart';
 
 
 void main() {

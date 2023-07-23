@@ -5,6 +5,7 @@ import 'package:matchipet/pages/login_page.dart';
 import 'adopt_match_page.dart';
 import 'donations_page.dart';
 import 'profile_page.dart';
+import 'package:matchipet/pages/login_page.dart';
 
 class AdopterMenu extends StatefulWidget {
   const AdopterMenu({super.key});
@@ -40,25 +41,36 @@ class _AdopterMenuState extends State<AdopterMenu> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Matchipet",
-          style: TextStyle(
-            color: Colors.black, // Color de texto negro
-          ),
-        ),
         backgroundColor: Colors.white,
         elevation: 0,
-        automaticallyImplyLeading: false,// Quita la sombra del AppBar
+        automaticallyImplyLeading: false, // Quita la sombra del AppBar
+        title: Row(
+          children: [
+            Image.asset(
+              'lib/images/matchipet.png', // Ruta de la imagen
+              width: 30, // Ancho de la imagen
+              height: 30, // Altura de la imagen
+              color: Color(0xffe3213f),
+            ),
+            SizedBox(width: 8), // Espacio entre la imagen y el texto
+            Text(
+              "MATCHIPET",
+              style: TextStyle(
+                color: Color(0xffe3213f), // Color de texto negro
+              ),
+            ),
+          ],
+        ),
         actions: [
           IconButton(
-            icon: Icon(Icons.logout,color: Colors.black,),
+            icon: Icon(Icons.logout, color: Colors.black),
             onPressed: () {
-              // Aquí puedes agregar el código para la funcionalidad de logout
-              // Por ejemplo, cerrar sesión y navegar a la pantalla de inicio de sesión
+              Navigator.push(context,MaterialPageRoute(builder: (context)=>LoginPage()));
             },
           ),
         ],
       ),
+
       body: IndexedStack(
         index: currentIndex,
         children: _pages,

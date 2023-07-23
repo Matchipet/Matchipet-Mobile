@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../model/example_candidate_model.dart';
+import '../model/candidate_model.dart';
 
 class MatchedPetsPage extends StatefulWidget {
   const MatchedPetsPage({super.key});
@@ -65,7 +65,7 @@ class _MatchedPetsPageState extends State<MatchedPetsPage> {
                             ),
                           ),
                           Container(
-                            width: (size.width - 15) / 2,
+                            width: (size.width - 30) / 2,
                             height: 250,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
@@ -81,23 +81,24 @@ class _MatchedPetsPageState extends State<MatchedPetsPage> {
                                   padding: const EdgeInsets.all(8.0),
                                   child: Row(
                                     children: [
-                                      Container(
-                                        width: 8,
-                                        height: 8,
-                                        decoration: BoxDecoration(
-                                          color: Colors.green,
-                                          shape: BoxShape.circle,
-                                        ),
-                                      ),
                                       SizedBox(
                                         width: 5,
                                       ),
-                                      Text(
-                                        candidates[index].name.toString(),
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                          color: Colors.white,
-                                        ),
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            candidates[index].name!,
+                                            style: const TextStyle(
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                          Icon(
+                                            candidates[index].gender.toString().toLowerCase()=="male" ? Icons.male : Icons.female,
+                                            color: Colors.white,
+                                            size: 20,
+                                          )
+                                        ],
                                       ),
                                     ],
                                   ),

@@ -69,6 +69,7 @@ flutter:
     - lib/images/bird_icon.png
     - lib/images/fish_icon.png
     - lib/images/hamster_icon.png
+    - lib/images/preferences_icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
