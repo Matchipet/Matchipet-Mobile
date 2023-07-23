@@ -35,14 +35,35 @@ class _ProfilePageState extends State<ProfilePage> {
               SizedBox(height: 10),
               Text(
                 'Diego Talledo',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 10),
-              Text('Edad: 30'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.calendar_month_outlined, size: 20, color: Color(
+                      0xff575757)),
+                  Text(' 20 años'),
+                ],
+              ),
               SizedBox(height: 5),
-              Text('Género: Masculino'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.people_outline, size: 20, color: Color(
+                      0xff575757)),
+                  Text(' Masculino'),
+                ],
+              ),
               SizedBox(height: 5),
-              Text('Distrito de Residencia: San Miguel'),
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.pin_drop_sharp, size: 20, color: Color(
+                      0xff7e7e7e)),
+                  Text(' San Miguel, Lima'),
+                ],
+              ),
               SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -50,36 +71,46 @@ class _ProfilePageState extends State<ProfilePage> {
                   Column(
                     children: [
                       Container(
-                        width: 60,
-                        height: 60,
+                        width: 65,
+                        height: 65,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Colors.red,
+                          color: Color(
+                              0xffe5e4e4),
                         ),
-                        child: Icon(Icons.edit, size: 30, color: Colors.white),
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.edit, size: 30, color: Color(0xffafafaf)),
+                        ),
                       ),
-                      SizedBox(height: 5),
+                      SizedBox(height: 8),
                       Text(
-                        'Editar',
-                        style: TextStyle(fontSize: 12, color: Colors.black),
+                        '      Editar \n Informacion',
+                        style: TextStyle(fontSize: 12, color: Color(
+                            0xff6b6b6b)),
                       ),
                     ],
                   ),
                   Column(
                     children: [
                       Container(
-                        width: 60,
-                        height: 60,
+                        width: 65,
+                        height: 65,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Colors.red,
+                          color: Color(
+                              0xffe5e4e4),
                         ),
-                        child: Icon(Icons.upgrade, size: 30, color: Colors.white),
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.upgrade, size: 30, color: Color(0xffafafaf)),
+                        ),
                       ),
-                      SizedBox(height: 5),
+                      SizedBox(height: 8),
                       Text(
-                        'Mejorar',
-                        style: TextStyle(fontSize: 12, color: Colors.black),
+                        '  Mejorar \n  Cuenta',
+                        style: TextStyle(fontSize: 12, color: Color(
+                            0xff6b6b6b)),
                       ),
                     ],
                   ),
@@ -88,12 +119,12 @@ class _ProfilePageState extends State<ProfilePage> {
               SizedBox(height: 20),
               // Divider
               Divider(thickness: 2),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               // Container con "Ahora mismo estoy buscando"
               Container(
                 padding: EdgeInsets.all(8),
                 child: Text(
-                  'Ahora mismo estoy buscando',
+                  'Ahora mismo estoy buscando...',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ),
@@ -118,54 +149,49 @@ class _ProfilePageState extends State<ProfilePage> {
                   else if (index == 3)
                     imageName = 'bird_icon.png';
                   else if (index == 4)
-                    imageName = 'fish_icon.png';
-                  else if (index == 5)
                     imageName = 'hamster_icon.png';
+                  else if (index == 5)
+                    imageName = 'fish_icon.png';
                   else
                     imageName = 'default_icon.png'; // Valor predeterminado en caso de que no coincida con ningún índice
 
-                  return GestureDetector(
-                    onTap: () {
-                    setState(() {
-                      petPreferences[index] = !petPreferences[index];
-                    });
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Material(
-                        elevation: 4, // Configura la elevación para agregar sombra
-                        shadowColor: Colors.black.withOpacity(0.4), // Ajusta la opacidad para hacer la sombra más tenue
-                        borderRadius: BorderRadius.circular(10),
-                        color: petPreferences[index] ? Colors.red : Colors.white,
-                        child: Column( // Usamos una columna para tener el Container y el Text debajo
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: 50,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                border: Border.all(color: petPreferences[index] ? Colors.red : Colors.white, width: 2),
-                              ),
-                              child: Container(
-                                padding: const EdgeInsets.all(1),
-                                child: Image.asset(
-                                  'lib/images/$imageName',
-                                  color: petPreferences[index] ? Colors.white : Colors.black,
-                                  width: 20,
-                                  height: 20,
-                                ),
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: MaterialButton(
+                      onPressed: (){
+                        setState(() {
+                          petPreferences[index] = !petPreferences[index];
+                        });
+                      },
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      elevation: 2,
+                      color: petPreferences[index] ? Color(
+                          0xfff13854) : Colors.white,
+                      child: Column( // Usamos una columna para tener el Container y el Text debajo
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: 50,
+                            height: 50,
+                            child: Container(
+                              padding: const EdgeInsets.all(1),
+                              child: Image.asset(
+                                'lib/images/$imageName',
+                                color: petPreferences[index] ? Colors.white : Colors.black,
+                                width: 20,
+                                height: 20,
                               ),
                             ),
-                            Text(
-                              petPreferencesName[index], // Llamamos a una función que obtiene el nombre del índice
-                              style: TextStyle(fontSize: 12, color: petPreferences[index] ? Colors.white : Colors.black),
-                            ),
-                          ],
-                        ),
+                          ),
+                          Text(
+                            petPreferencesName[index],
+                            style: TextStyle(fontSize: 12, color: petPreferences[index] ? Colors.white : Colors.black),
+                          ),
+                        ],
                       ),
                     ),
-
                   );
               },
             ),
