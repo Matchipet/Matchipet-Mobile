@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'dart:developer';
 
 import 'package:appinio_swiper/appinio_swiper.dart';
-import 'example_candidate_model.dart';
-import 'example_card.dart';
+import '../model/example_candidate_model.dart';
+import 'card/example_card.dart';
 import 'package:flutter/cupertino.dart';
 
-import 'example_buttons.dart';
+import 'card/example_buttons.dart';
 
 class AdoptMatchPage extends StatefulWidget {
   const AdoptMatchPage({Key? key}) : super(key: key);

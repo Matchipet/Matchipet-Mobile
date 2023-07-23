@@ -3,6 +3,9 @@ import 'pages/login_page.dart';
 import 'pages/register_page.dart';
 import 'pages/adopter/adopter_menu.dart';
 import 'pages/shelter/shelter_menu.dart';
+import 'pages/adopter/card/example_card.dart';
+import 'pages/model/example_candidate_model.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +21,7 @@ class MyApp extends StatelessWidget {
       home: LoginPage(),
       theme: ThemeData(
         primarySwatch: Colors.red,
-        fontFamily: 'Montserrat',
+        fontFamily: 'Poppins',
         primaryColor: Color(0xffd24c4b), // Color principal de tu aplicación
         textSelectionTheme: TextSelectionThemeData(
           cursorColor: Color(0xffd24c4b), // Color del cursor en los campos de texto

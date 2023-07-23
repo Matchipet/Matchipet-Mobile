@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'example_candidate_model.dart';
+import '../../model/example_candidate_model.dart';
 
 class ExampleCard extends StatelessWidget {
   final ExampleCandidateModel candidate;
