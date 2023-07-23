@@ -63,6 +63,12 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - lib/images/matchipet.png
+    - lib/images/dog_icon.png
+    - lib/images/cat_icon.png
+    - lib/images/bunny_icon.png
+    - lib/images/bird_icon.png
+    - lib/images/fish_icon.png
+    - lib/images/hamster_icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
