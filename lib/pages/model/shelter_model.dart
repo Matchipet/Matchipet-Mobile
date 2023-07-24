@@ -16,37 +16,44 @@ class ShelterModel {
 
 List<ShelterModel> shelters = [
   ShelterModel(
-    name: 'Tomas',
-    img: 'https://static.wikia.nocookie.net/silly-cats/images/c/cd/TheBeast.png/revision/latest?cb=20220807184501',
+    name: 'PataHome',
+    img: 'https://efeverde.com/wp-content/uploads/2022/01/alepo-gatos.jpg',
+    address: 'Avenida Imaginaria 456, Lima'
   ),
   ShelterModel(
-    name: 'Kitten',
-    img: 'https://s.yimg.com/ny/api/res/1.2/WfAIcTxGIhQZIMOSjLPohw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTg1Mw--/https://media.zenfs.com/en/homerun/feed_manager_auto_publish_494/f4130c376e8c1633b900e6006fea8d89',
+    name: 'MiauRefugio',
+    img: 'https://e.rpp-noticias.io/xlarge/2020/10/15/110011_1010058.jpg',
+    address: 'Calle Ficticia 123, Miraflores, Lima'
   ),
   ShelterModel(
-    name: 'Trapecio',
-    img: 'https://openseauserdata.com/files/4beb78c1fab1e6add27622cc5b92a0df.jpg',
+    name: 'GuauHogar',
+    img: 'https://elcomercio.pe/resizer/A877dyzFn6Vksj7EbEjv81Iej5U=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/UIONYH5FVNCC7FOEE4QYMCRPEE.jpg',
+    address: 'Jirón Irreal 789, Barranco, Lima'
   ),
   ShelterModel(
-    name: 'Masapan',
-    img: 'https://i.pinimg.com/736x/b4/91/10/b49110c24bcaa2411e38ae87fe229526.jpg',
+    name: 'PatitasParador',
+    img: 'https://e.rpp-noticias.io/xlarge/2018/08/08/659401000-18752wjpg.jpg',
+    address: 'Pasaje Inventado 234, Surco, Lima'
   ),
   ShelterModel(
-    name: 'Tomas',
+    name: 'HuellitasLodge',
     img: 'https://st2.depositphotos.com/45846082/48097/i/450/depositphotos_480977262-stock-photo-serious-funny-white-fold-cat.jpg',
+    address: 'Callejón Irrealidad 567, Magdalena del Mar, Lima'
   ),
   ShelterModel(
-    name: 'Pandemio',
-    img: 'https://memes.co.in/memes/update/uploads/2021/05/93e2379.jpg',
+    name: 'PeludoRefugio',
+    img: 'https://res.cloudinary.com/worldpackers/image/upload/c_limit,f_auto,q_auto,w_1140/ltz4ltdmopqeqexzuakl',
+    address: 'Avenida Ficción 890, San Borja, Lima'
   ),
   ShelterModel(
-    name: 'Amborgesa',
-    img: 'https://i.chzbgr.com/full/9685969664/h10A308EE/cat',
+    name: 'CasaMascota',
+    img: 'https://pqs.pe/wp-content/uploads/2021/09/IMG_7280-1024x768.jpg',
+    address: 'Jirón Imaginación 345, La Molina, Lima'
   ),
-  ShelterModel
-    (
-    name: 'Masapan',
-    img: 'https://i.pinimg.com/736x/b4/91/10/b49110c24bcaa2411e38ae87fe229526.jpg',
+  ShelterModel(
+    name: 'PetRefugio',
+    img: 'https://elcomercio.pe/resizer/Y4qpRvm9fKs_zaO4lpkMdxDoM6g=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/DDCE7DWFPBABJI4VNOCVV5SGGQ.png',
+    address: 'Pasaje Irreal 678, Lince, Lima'
   )
 ];
 

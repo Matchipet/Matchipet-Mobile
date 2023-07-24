@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:matchipet/pages/model/shelter_model.dart';
-import '../../model/shelter_model.dart';
-import 'match_buttons.dart';
 
 class DonationCard extends StatelessWidget {
   final ShelterModel shelterModel;
