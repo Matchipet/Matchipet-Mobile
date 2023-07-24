@@ -36,11 +36,6 @@ List<ShelterModel> shelters = [
     address: 'Pasaje Inventado 234, Surco, Lima'
   ),
   ShelterModel(
-    name: 'HuellitasLodge',
-    img: 'https://st2.depositphotos.com/45846082/48097/i/450/depositphotos_480977262-stock-photo-serious-funny-white-fold-cat.jpg',
-    address: 'Callejón Irrealidad 567, Magdalena del Mar, Lima'
-  ),
-  ShelterModel(
     name: 'PeludoRefugio',
     img: 'https://res.cloudinary.com/worldpackers/image/upload/c_limit,f_auto,q_auto,w_1140/ltz4ltdmopqeqexzuakl',
     address: 'Avenida Ficción 890, San Borja, Lima'

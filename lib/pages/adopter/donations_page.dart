@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
-//import 'state_servies.dart';
 import '../model/shelter_model.dart';
+import 'card/donation_card.dart';
 
 
 class DonationsPage extends StatefulWidget {
@@ -12,7 +12,6 @@ class DonationsPage extends StatefulWidget {
 }
 
 class _DonationsPageState extends State<DonationsPage> {
-  String? userSelected;
   String userName = "Diego";
   List<ShelterModel> albergues = shelters;
 
@@ -28,6 +27,7 @@ class _DonationsPageState extends State<DonationsPage> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
@@ -112,18 +112,131 @@ class _DonationsPageState extends State<DonationsPage> {
                   },
                   onSuggestionSelected: (ShelterModel suggestion) {
                     setState(() {
-                      userSelected = suggestion.name;
+                      //Aqui abro un nuevo dialog con mi palabra suggestion.name
+
                     });
                   },
                 )),
           ),
         ),
-        body: Center(
-          child: Text(
-            userSelected ?? 'Search',
-            style: const TextStyle(fontSize: 20),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0, bottom: 8, left: 25),
+                child: Text(
+                  userName + ", necesitamos tu ayuda !",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              Container(
+                height: 350,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: albergues.length,
+                  itemBuilder: (context, index) {
+                    return SizedBox(
+                      width: 300, // Ajusta el ancho del DonationCard
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: DonationCard(shelterModel: albergues[index]),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0, bottom: 8, left: 25),
+                child: Text("Cerca",
+                  style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: 900, // Altura de la cuadrícula
+                  child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3, // Número de columnas (3 columnas en este caso)
+                      crossAxisSpacing: 10, // Espacio horizontal entre elementos
+                      mainAxisSpacing: 10, // Espacio vertical entre elementos
+                    ),
+                    itemCount: albergues.length, // Número de elementos en la cuadrícula
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Stack(
+                          children: [
+                            Container(
+                              width: (MediaQuery.of(context).size.width - 30) / 2,
+                              height: 300, // Altura de los elementos dentro de la cuadrícula
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                image: DecorationImage(
+                                  image: NetworkImage(
+                                      albergues[index].img.toString()), // Reemplaza con la URL de la imagen
+                                  fit: BoxFit.cover, // Ajusta cómo se muestra la imagen dentro del contenedor
+                                ),
+                              ),
+                            ),
+                            Container(
+                              width: (MediaQuery.of(context).size.width - 30) / 2,
+                              height: 300, // Altura de los elementos dentro de la cuadrícula
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                gradient: LinearGradient(colors: [
+                                  Colors.black.withOpacity(0.25),
+                                  Colors.black.withOpacity(0),
+                                ]),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
+                                      children: [
+                                        SizedBox(
+                                          width: 5,
+                                        ),
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              albergues[index].name!,
+                                              style: const TextStyle(
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+
+
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
 

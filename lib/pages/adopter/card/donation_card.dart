@@ -18,9 +18,9 @@ class DonationCard extends StatelessWidget {
         color: CupertinoColors.white,
         boxShadow: [
           BoxShadow(
-            color: CupertinoColors.systemGrey.withOpacity(0.2),
-            spreadRadius: 3,
-            blurRadius: 7,
+            color: CupertinoColors.systemGrey.withOpacity(0.15),
+            spreadRadius: 2,
+            blurRadius: 10,
             offset: const Offset(0, 3),
           )
         ],
@@ -28,7 +28,7 @@ class DonationCard extends StatelessWidget {
       alignment: Alignment.center,
       child: Column(
         children: [
-          Flexible(
+          Expanded(
             child: Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
@@ -43,8 +43,8 @@ class DonationCard extends StatelessWidget {
             ),
           ),
           Container(
-            padding:  EdgeInsets.all(15),
-            decoration:  BoxDecoration(
+            padding: EdgeInsets.all(15),
+            decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(10),
@@ -85,7 +85,6 @@ class DonationCard extends StatelessWidget {
                         ),
                       ],
                     ),
-
                   ],
                 ),
               ],
@@ -96,3 +95,5 @@ class DonationCard extends StatelessWidget {
     );
   }
 }
+
+

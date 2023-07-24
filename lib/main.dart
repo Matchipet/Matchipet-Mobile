@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pages/login_page.dart';
-import 'pages/register_page.dart';
-import 'pages/adopter/adopter_menu.dart';
-import 'pages/shelter/shelter_menu.dart';
-import 'pages/adopter/card/match_card.dart';
-import 'pages/model/candidate_model.dart';
+import 'pages/adopter/card/donation_card.dart';
+import 'pages/model/shelter_model.dart';
 
 
 void main() {

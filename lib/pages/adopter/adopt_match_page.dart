@@ -20,82 +20,88 @@ class _AdoptMatchPageState extends State<AdoptMatchPage> {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      backgroundColor: Colors.white,
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 40),
-                child: Text("Haz match con tu peludito ideal !",
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 17,
-                  ),),
-              ),
-              MaterialButton(onPressed: (){},
-                  splashColor: Colors.transparent, // Establecer el color del splash a transparente
-                  highlightColor: Colors.transparent,
-                child: Container(
-                  padding: const EdgeInsets.all(1),
-                  child: Image.asset(
-                    'lib/images/preferences_icon.png',
-                    color: Colors.red,
-                    width: 20,
-                    height: 20,
+    return WillPopScope(
+        onWillPop: () async {
+      return false;
+      },
+      child: CupertinoPageScaffold(
+        backgroundColor: Colors.white,
+        child: Column(
+          children: [
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 40),
+                    child: Text("Haz match con tu peludito ideal !",
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17,
+                      ),),
                   ),
-                )
-              )
-            ]
-          ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.67,
-            child: AppinioSwiper(
-              backgroundCardsCount: 2,
-              swipeOptions: const AppinioSwipeOptions.all(),
-              unlimitedUnswipe: true,
-              controller: controller,
-              unswipe: _unswipe,
-              onSwiping: (AppinioSwiperDirection direction) {
-                debugPrint(direction.toString());
-              },
-              onSwipe: _swipe,
-              padding: const EdgeInsets.only(
-                left: 25,
-                right: 25,
-                top: 10,
-                bottom: 37,
-              ),
-              onEnd: _onEnd,
-              cardsCount: candidates.length, // Asegúrate de que candidates esté definido
-              cardsBuilder: (BuildContext context, int index) {
-                return ExampleCard(candidate: candidates[index]); // Reemplaza ExampleCard con el widget que deseas mostrar
-              },
+                  MaterialButton(onPressed: (){},
+                      splashColor: Colors.transparent, // Establecer el color del splash a transparente
+                      highlightColor: Colors.transparent,
+                      child: Container(
+                        padding: const EdgeInsets.all(1),
+                        child: Image.asset(
+                          'lib/images/preferences_icon.png',
+                          color: Colors.red,
+                          width: 20,
+                          height: 20,
+                        ),
+                      )
+                  )
+                ]
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const SizedBox(
-                width: 20,
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.67,
+              child: AppinioSwiper(
+                backgroundCardsCount: 2,
+                swipeOptions: const AppinioSwipeOptions.all(),
+                unlimitedUnswipe: true,
+                controller: controller,
+                unswipe: _unswipe,
+                onSwiping: (AppinioSwiperDirection direction) {
+                  debugPrint(direction.toString());
+                },
+                onSwipe: _swipe,
+                padding: const EdgeInsets.only(
+                  left: 25,
+                  right: 25,
+                  top: 10,
+                  bottom: 37,
+                ),
+                onEnd: _onEnd,
+                cardsCount: candidates.length, // Asegúrate de que candidates esté definido
+                cardsBuilder: (BuildContext context, int index) {
+                  return ExampleCard(candidate: candidates[index]); // Reemplaza ExampleCard con el widget que deseas mostrar
+                },
               ),
-              swipeLeftButton(controller),
-              const SizedBox(
-                width: 40,
-              ),
-              swipeRightButton(controller),
-              const SizedBox(
-                width: 40,
-              ),
-              unswipeButton(controller),
-            ],
-          )
-        ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  width: 20,
+                ),
+                swipeLeftButton(controller),
+                const SizedBox(
+                  width: 40,
+                ),
+                swipeRightButton(controller),
+                const SizedBox(
+                  width: 40,
+                ),
+                unswipeButton(controller),
+              ],
+            )
+          ],
+        ),
       ),
     );
+
   }
 
   void _swipe(int index, AppinioSwiperDirection direction) {
