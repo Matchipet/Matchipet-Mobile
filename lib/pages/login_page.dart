@@ -12,7 +12,7 @@ class LoginPage extends StatelessWidget {
   void _login(BuildContext context, String email, String password) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => AdopterMenu()),
+      MaterialPageRoute(builder: (context) => ShelterMenu()),
     );
 
     /*if (email.isEmpty || password.isEmpty) {
