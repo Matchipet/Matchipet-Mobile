@@ -13,7 +13,7 @@ class _AdoptersPageState extends State<AdoptersPage> {
     return Scaffold(
       body: Center(
         child: Text(
-            "Adoptantes"
+            "Aqui se mostraran cards de solo los animales con una bolita roja en la esquina superior derecha \n con el numero de las personas interesadas \n cuando le de click se abrira una nueva ventana con las personas interesadas"
         ),
       ),
     );

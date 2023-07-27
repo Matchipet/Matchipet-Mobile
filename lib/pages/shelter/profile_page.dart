@@ -13,7 +13,7 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       body: Center(
         child: Text(
-            "Perfil"
+            "Perfil general con datos en toda la pantalla"
         ),
       ),
     );

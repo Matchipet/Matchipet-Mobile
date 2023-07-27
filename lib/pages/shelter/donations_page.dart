@@ -13,7 +13,7 @@ class _DonationPageState extends State<DonationPage> {
     return Scaffold(
       body: Center(
         child: Text(
-            "Donations"
+            "Se mostrara una interzas en la que el albergue puede pedir materiales"
         ),
       ),
     );

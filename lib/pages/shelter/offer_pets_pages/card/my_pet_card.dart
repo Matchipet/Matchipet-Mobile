@@ -14,7 +14,7 @@ class MyPetCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
-        height: 180,
+        height: 200,
         child: Card(
           elevation: 4,
           shape: RoundedRectangleBorder(
@@ -40,7 +40,7 @@ class MyPetCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        candidate.name ?? 'Nombre Desconocido', // Provide a default value if name is null
+                        candidate.name ?? 'Nombre Desconocido',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
@@ -74,6 +74,16 @@ class MyPetCard extends StatelessWidget {
                     ],
                   ),
                 ),
+                SizedBox(width: 8), // Add some spacing between the column and the delete button
+                IconButton(
+                  onPressed: () {
+                    // Implement the delete functionality here
+                    // For example, you can use the candidate's ID to delete it from the list
+                    // or show a confirmation dialog before deleting.
+                  },
+                  icon: Icon(Icons.clear),
+                  color: Colors.red,
+                ),
               ],
             ),
           ),
@@ -82,4 +92,5 @@ class MyPetCard extends StatelessWidget {
     );
   }
 }
+
 
