@@ -26,7 +26,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   shape: BoxShape.circle,
                   image: DecorationImage(
                     image: NetworkImage(
-                      'https://filmatronik.com/wp-content/uploads/2021/02/7bb1bc45639c478ef4b2b0b114a3e315.jpg',
+                      'https://i2-prod.mirror.co.uk/incoming/article26956423.ece/ALTERNATES/s1200c/1_58th-Cannes-Film-Festival-Decameron-Angels-and-Virgins-Photocall.jpg',
                     ),
                     fit: BoxFit.cover,
                   ),
@@ -57,7 +57,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               SizedBox(height: 5),
               Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(Icons.pin_drop_sharp, size: 20, color: Color(
                       0xff7e7e7e)),
@@ -135,67 +135,67 @@ class _ProfilePageState extends State<ProfilePage> {
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
                     childAspectRatio: (MediaQuery.of(context).size.width / 3) / 100,
-                ),
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: petPreferences.length,
-                itemBuilder: (context, index) {
-                  String imageName;
-                  if (index == 0)
-                    imageName = 'dog_icon.png';
-                  else if (index == 1)
-                    imageName = 'cat_icon.png';
-                  else if (index == 2)
-                    imageName = 'bunny_icon.png';
-                  else if (index == 3)
-                    imageName = 'bird_icon.png';
-                  else if (index == 4)
-                    imageName = 'hamster_icon.png';
-                  else if (index == 5)
-                    imageName = 'fish_icon.png';
-                  else
-                    imageName = 'default_icon.png'; // Valor predeterminado en caso de que no coincida con ningún índice
+                  ),
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: petPreferences.length,
+                  itemBuilder: (context, index) {
+                    String imageName;
+                    if (index == 0)
+                      imageName = 'dog_icon.png';
+                    else if (index == 1)
+                      imageName = 'cat_icon.png';
+                    else if (index == 2)
+                      imageName = 'bunny_icon.png';
+                    else if (index == 3)
+                      imageName = 'bird_icon.png';
+                    else if (index == 4)
+                      imageName = 'hamster_icon.png';
+                    else if (index == 5)
+                      imageName = 'fish_icon.png';
+                    else
+                      imageName = 'default_icon.png'; // Valor predeterminado en caso de que no coincida con ningún índice
 
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: MaterialButton(
-                      onPressed: (){
-                        setState(() {
-                          petPreferences[index] = !petPreferences[index];
-                        });
-                      },
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      elevation: 2,
-                      color: petPreferences[index] ? Color(
-                          0xfff13854) : Colors.white,
-                      child: Column( // Usamos una columna para tener el Container y el Text debajo
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            width: 50,
-                            height: 50,
-                            child: Container(
-                              padding: const EdgeInsets.all(1),
-                              child: Image.asset(
-                                'lib/images/$imageName',
-                                color: petPreferences[index] ? Colors.white : Colors.black,
-                                width: 20,
-                                height: 20,
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: MaterialButton(
+                        onPressed: (){
+                          setState(() {
+                            petPreferences[index] = !petPreferences[index];
+                          });
+                        },
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        elevation: 2,
+                        color: petPreferences[index] ? Color(
+                            0xfff13854) : Colors.white,
+                        child: Column( // Usamos una columna para tener el Container y el Text debajo
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: 50,
+                              height: 50,
+                              child: Container(
+                                padding: const EdgeInsets.all(1),
+                                child: Image.asset(
+                                  'lib/images/$imageName',
+                                  color: petPreferences[index] ? Colors.white : Colors.black,
+                                  width: 20,
+                                  height: 20,
+                                ),
                               ),
                             ),
-                          ),
-                          Text(
-                            petPreferencesName[index],
-                            style: TextStyle(fontSize: 12, color: petPreferences[index] ? Colors.white : Colors.black),
-                          ),
-                        ],
+                            Text(
+                              petPreferencesName[index],
+                              style: TextStyle(fontSize: 12, color: petPreferences[index] ? Colors.white : Colors.black),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  );
-              },
-            ),
-          ),
+                    );
+                  },
+                ),
+              ),
             ],
           ),
         ),

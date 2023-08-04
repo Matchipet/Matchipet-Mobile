@@ -12,7 +12,7 @@ class OffePetsPage extends StatefulWidget {
 }
 
 class _OffePetsPageState extends State<OffePetsPage> {
-  String shelterName = "PatitasHome";
+  String shelterName = "Entre Patas";
   bool adoptionPage=true;
   final PageController _pageController = PageController();
 
